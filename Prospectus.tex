@@ -1,0 +1,267 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{tikz-feynman}
+\usepackage{comment}
+\usepackage{chngcntr}
+\usepackage{subcaption}
+\usepackage{setspace}
+
+\newcommand{\rulesep}{\unskip\ \vrule\ }
+\newcommand{\zeronubb}{$0\nu \beta \beta$}
+\newcommand{\twonubb}{$2\nu \beta \beta$}
+
+
+\counterwithin{figure}{subsection}
+\author{Christopher Davis\thanks{\url{christopher.davis@yale.edu}}}
+\title{Measurement of 2$\nu\nu\beta\beta$ in CUORE}
+\begin{document}
+
+\begin{titlepage}
+\centering
+
+{\scshape\LARGE Yale University \par}
+\vspace{1 cm}
+{\scshape\Large Thesis Prospectus \par}
+\vspace{1.5 cm}
+{\huge\bfseries Measurement of Two Neutrino Double Beta Decay in CUORE \par}
+\vspace{2 cm}
+{\Large\itshape Christopher Davis \par}
+\vfill
+supervised by \par
+Dr. ~Reina \textsc{Maruyama}
+
+\vfill
+{\large \today \par}
+\end{titlepage}
+
+\tableofcontents
+
+\doublespacing
+
+\section{Introduction}
+
+\subsection{Standard Model}
+The Standard Model of particle physics is the main explanation for physical phenomena and has correctly predicted the existence of multiple particles -- most recently the Higgs boson \cite{Higgs-ATLAS}\cite{Higgs-CMS}. The Standard Model is one of the most powerful theories in physics, able to correctly predict phenomena on both subatomic and cosmological scales (\color{blue}citation needed\color{black}).
+
+In the Standard Model, there are fermionic particles: the quarks and leptons that constitute matter and bosonic particles: the gauge bosons and the higgs boson that mediate the fundamental forces and give particles mass, respectively. 
+
+\subsubsection{Neutrinos}
+
+However, not all is well with the theory. For example, one type of particle in the Standard Model, the neutrino, has properties that are in conflict with the Standard Model. Neutrinos have been observed to oscillate between their generational counterparts: electron-, mu-, and tau-neutrinos \cite{Homestake Neutrino}\cite{Super-K}\cite{Sudbury Neutrino}. This phenomenon implies that the neutrinos have a non-zero mass, which is in strong tension with the Standard Model, which assumes that neutrinos are massless.
+
+The Standard Model can be extended to include the masses for the neutrinos, but this opens up another question for how the neutrino mass comes in to the Standard Model Lagrangian. For the other fundamental fermionic particles, such as the electron that has a $\textrm{e}^-$ charge, the antiparticle will have the opposite charge, such as the positron that has a $\textrm{e}^+$ charge. This therefore means that the particle and antiparticle are distinct particles, called Dirac fermions. The neutrino is unique in this regard as it is the only electrically neutral fundamental fermion. This means the neutrino may be identical to its own antiparticle, which we call a Majorana fermion, and, more generally, may have both a Dirac and Majorana mass.
+
+\begin{center}
+\begin{eqnarray}
+\mathcal{L} = \frac{1}{2}m_D(\bar{\psi}_L\psi_R+\bar{\psi}^c_L\psi^C_R)+m_L\bar{\psi}_L\psi^c_R+m_R+\bar{\psi}^c_L\psi_R +h.c. \\
+=\frac{1}{2} \begin{pmatrix}
+\bar{\psi}_L,& \bar{\psi}^c_L \\
+\end{pmatrix} \begin{pmatrix}
+m_L & m_D \\
+m_D & m_R \\
+\end{pmatrix}
+\begin{pmatrix}
+\psi^c_R \\
+\psi_R
+\end{pmatrix}
+\end{eqnarray}
+\end{center}
+
+\subsubsection{Neutrino Mass}
+
+For the neutrino to have mass, that mass has to come from somewhere (\color{blue}citation needed\color{black}). While the specific origin of the neutrino masses is unknown, and, in particular, why the mass of the neutrino is $10^6$ times lighter than the electron, the next lightest known fundamental particle. There are some compelling theories for this difference, however. One of the simplest methods is known as the Seesaw mechanism. This method is the simplest because it only extends the SM by adding a single right-handed singlet neutrino, $\nu_R$, for each of the flavor states.
+
+The type I seesaw mechanism then introduces a mass matrix for the neutrinos of the type:
+\begin{equation}
+M =\begin{pmatrix}
+0 & m_D \\
+m_D & M_R
+\end{pmatrix}
+\end{equation}
+In the case where $M_R \gg m_D$, the two neutrino masses become $M_R$ and $\frac{m_D^2}{M_R}$, which, if we assume that the Dirac mass is similar to the other leptons ($\approx 1 \textrm{MeV}$), yields a meV neutrino for a heavy neutrino of mass $10^{15} \textrm{eV}$.
+
+\subsection{Baryogenesis}
+
+Another issue with the Standard Model is that it cannot correctly predict the matter-antimatter asymmetry present in the universe. After the Big Bang, matter and antimatter should have been produced in equal amounts. However, instead of being produced in equal numbers, the observable universe is made up entirely of only matter on large scales, implying that the universe has a preference for slightly more baryons than antibaryons (\color{blue}citation needed\color{black}). The requirements for a process to create this asymmetry are summed up in the Sakharov conditions for baryogenesis \cite{Sakharov}:
+\begin{enumerate}
+\item Baryon number, B, violation
+\item C and CP violation
+\item Out of thermal equilibrium
+\end{enumerate}
+The first condition is needed so that there is a physics process within which a baryon can be created or an anti-baryon destroyed ($\Delta \textrm{B}\neq0$), the second condition requires that this process occurs more often for baryon creation and anti-baryon destruction than vice-versa ($\Gamma(\Delta \textrm{B}>1) > \Gamma(\Delta \textrm{B}<-1)$), and the third condition requires that the process has to occur when the universe is not in thermal equilibrium as other processes would have to oppose baryon-asymmetry in thermal equilibrium.
+
+\subsection{Majorana Neutrinos and Leptogenesis}
+One possible mechanism for baryogenesis is that the imbalance between matter and antimatter is due to an imbalance in leptons that transfers over to the baryons. This leptogenesis would have to fulfill the same Sakharov conditions except that there would need to be lepton number, L, violation. This violation is possible if the neutrino is its own antiparticle. In the interaction $d + d \rightarrow u + u + e + e$ shown below,  \hyperref[fig:0nuBB]{Fig \ref{fig:0nuBB}}, a neutrino is exchanged between the two $W^-$ and allows for the final state to have two more leptons than the initial state, thereby violating lepton number conservation.
+
+
+\begin{figure}[t!]
+\centering
+\begin{subfigure}[t]{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+
+\begin{feynman}
+\vertex (a) {\(d\)};
+\vertex [right=of a] (b);
+\vertex [above right=of b] (f1) {\(u\)};
+\vertex [below right = of b] (c);
+\vertex [above right=of c] (f2) {\(e\)};
+\vertex [below=of c] (f3);
+\vertex [below left = of f3] (d);
+\vertex [below right = of f3] (f4) {\(e\)};
+\vertex [left = of d] (f5) {\(d\)};
+\vertex [below right = of d] (f6) {\(u\)};
+
+\diagram {
+(a) -- [fermion] (b) -- [fermion] (f1),
+(b) -- [boson, edge label'=\(W^{-}\)] (c),
+(c) -- [fermion] (f2),
+(f3) -- [plain, edge label'={\(\nu=\overline{\nu}\)}] (c),
+(f3) -- [boson, edge label'=\(W^{-}\)] (d),
+(f3) -- [fermion] (f4),
+(f5) -- [fermion] (d) -- [fermion] (f6),
+};
+\end{feynman}
+\end{tikzpicture}
+\caption{}
+\label{fig:0nuBB}
+\end{subfigure}
+\rulesep
+\begin{subfigure}[t]{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+
+\begin{feynman}
+\vertex (a) {\(d\)};
+\vertex [right=of a] (b);
+\vertex [above right=of b] (f1) {\(u\)};
+\vertex [below right = of b] (c);
+\vertex [above right=of c] (f2) {\(e\)};
+\vertex [right = of c] (nu1) {\(\nu_e\)};
+\vertex [below=of c] (d);
+\vertex [below left = of d] (e);
+\vertex [right = of d] (nu2) {\(\nu_e\)};
+\vertex [below right = of d] (f4) {\(e\)};
+\vertex [left = of e] (f5) {\(d\)};
+\vertex [below right = of e] (f6) {\(u\)};
+
+\diagram {
+(a) -- [fermion] (b) -- [fermion] (f1),
+(b) -- [boson, edge label'=\(W^{-}\)] (c),
+(c) -- [fermion] (f2),
+(d) -- [opacity = 0] (c),
+(c) -- [anti fermion] (nu1),
+(d) -- [boson, edge label'=\(W^{-}\)] (e),
+(d) -- [fermion] (f4),
+(d) -- [anti fermion] (nu2),
+(f5) -- [fermion] (e) -- [fermion] (f6),
+};
+\end{feynman}
+\end{tikzpicture}
+\caption{}
+\label{fig:2nuBB}
+\end{subfigure}
+\caption{(a) Diagram of Neutrinoless Double Beta Decay: $d+d\rightarrow u+u+e+e$. (b) Diagram of Two Neutrino Double Beta Decay: $d+d \rightarrow u+u+e+e+\nu+\nu$.}
+\end{figure}
+
+If this process exists, then, in the early universe, there could have been an imbalance in the number of leptons and antileptons that could have been transferred by sphaleron transitions to the baryons.
+
+
+\section{Double Beta Decay in the Laboratory}
+
+In the laboratory, the fundamental interactions shown in \hyperref[fig:2nuBB]{Fig. \ref{fig:0nuBB} and \ref{fig:2nuBB}} are measured as decays of specific nuclei. In particular, double beta decay occurs when two protons or two neutrons in a nucleus spontaneously decay, typically from the ground state of the initial nucleus to the ground state of the final nucleus (\color{blue}citation needed\color{black}). By energy conservation, the change in energy from the initial to the final nucleus, called the Q-value, is given in roughly equal amounts to the final state particles: the two electrons, and, in the case of \twonubb, the two neutrinos. The nuclear recoil is negligible in these decays as the nuclei involved are much more massive than the electrons and the neutrinos. 
+
+When detecting double beta decay, the neutrinos pass undetected through the detector volume and only the electrons can be measured. Thus, the energies reconstructed by the electrons will be a continuous spectrum up to the Q-value for \twonubb~and a single peak at the Q-value for \zeronubb~\hyperref[fig:2nubbspectrum]{Fig. \ref{fig:2nubbspectrum}}.
+
+\begin{figure} [h]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/2nuBBSpectrum.png}
+\caption{An example spectrum for Double beta Decay. The amplitude of the \zeronubb~decay is not shown to scale.}
+\label{fig:2nubbspectrum}
+\end{figure}
+
+
+\subsection{\twonubb}
+In general, it is difficult to measure double beta decay as it is a second-order weak process. The exception to this occurs in some even-even nuclei wherein single beta decay is energetically forbidden, but double beta decay is allowed. Of the 35 naturally occurring isotopes where double beta decay is possible, 12 of them have been measured in the laboratory. Of particular importance for this work is the double beta decay half-life for $^{130}\textrm{Te}$ at $0.7 \pm 0.09 \pm 0.11 \times 10^{21}~\textrm{years}$ as measured by the NEMO-3 collaboration (\color{blue}citation needed\color{black}). The half-lives for double beta decay are the longest currently measured, as the longest measured alpha decay is $^{209}\textrm{Bi}$ with a half-life of $1.9 \times 10^{19}~\textrm{years}$.
+
+Since the half-life is so large, an experiment needs to have low background levels in order to be able to observe these events. This is generally realized in experiments by going to deep underground laboratories to escape cosmic radiation sources and by having pure and clean materials in and near the detector and sources. Also, due to the energies being produced according to a spectrum, all of the backgrounds with energy up to the Q-value will reduce the sensitivity of the measurement.
+
+\begin{comment}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+Isotope & Half-life, $10^{21}$ years & Experiment \\ \hline 
+$^{48}\textrm{Ca}$ & $0.044^{+0.005}_{-0.004} \pm 0.004$ & Nemo-3 \\ \hline
+$^{78}\textrm{Ge}$ & $1.84^{+0.09~+0.11}_{-0.08~-0.06}$ & GERDA (2013) \\ \hline
+$^{82}\textrm{Se}$ & $0.096 \pm 0.003 \pm 0.010$ & NEMO-3 \\ \hline
+$^{96}\textrm{Zr}$ & $0.0235 \pm 0.0014 \pm 0.0016$ & NEMO-3 \\ \hline
+$^{100}\textrm{Mo}$ & $0.00711 \pm 0.00002 \pm 0.00054$ & NEMO-3 \\ \hline
+$^{116}\textrm{Cd}$ & $0.028 \pm 0.001 \pm 0.003$ & NEMO-3 \\ \hline
+%^{128}\textrm{Te}$ & $7200 \pm 400$ & Geochemical \\ \hline
+$^{130}\textrm{Te}$ & $0.7 \pm 0.09\pm 0.11$ & NEMO-3 \\ \hline
+$^{136}\textrm{Xe}$ & $2.165 \pm 0.016 \pm 0.059$ & EXO-200 \\ \hline
+$^{150}\textrm{Nd}$ & $0.00911^{+0.00025}_{-0.00022}\pm 0.00063$ & NEMO-3 \\ \hline
+%$^{238}\textrm{U}$ & $2.0 \pm 0.6$ & Radiochemical \\ \hline
+\end{tabular} 
+\end{center}
+\end{comment}
+
+\subsection{\zeronubb}
+In principle, all nuclei that can undergo \twonubb~can also undergo \zeronubb. The main difference experimentally is that instead of searching for a spectrum, the signature of \zeronubb~is that of a single peak at the Q-value. This peak feature allows for experiments to be designed that are optimized to minimize backgrounds around the Q-value, which increases their sensitivity to \zeronubb. 
+
+Sensitivity to \zeronubb~ 
+
+\subsection{\zeronubb~Experiments}
+\subsubsection{GERDA}
+\subsubsection{NEXO}
+\subsubsection{NEMO}
+\subsubsection{Majorana}
+\subsubsection{Heidelburg-Moscow}
+\subsubsection{Kamland-Zen}
+
+\section{CUORE Experiment}
+
+The CUORE (Cryogenic Underground Observatory for Rare Events)  Experiment is located in Gran Sasso, Italy, and is a bolometric 
+
+\section{Location of Work}
+
+\section{Dissertation Organization Proposal}
+
+\begin{itemize}
+\item Introduction \checkmark
+\item Theory \checkmark
+\item CUORE and other experiments (Kamland, Majorana, EXO, Heidelburg, GERDA, NEMO)
+\item Physics Reach of CUORE
+\item Simulation for CUORE
+\item Field of 2nuBB 
+\item Analysis
+\item timeline
+\item conclusion/summary
+\end{itemize}
+
+
+\section{Timetable}
+
+
+\begin{thebibliography}{8}
+\bibitem{Higgs-ATLAS}
+ATLAS Collaboration. Phys. Lett. B \textbf{716} (2012) 1
+\bibitem{Higgs-CMS}
+CMS Collaboration. Phys. Lett. B \textbf{716} (2012) 30
+\bibitem{Homestake Neutrino}
+R. Davis, D. Harmer, K. Hoffman. Phys. Rev. Lett. \textbf{20}, 1205 (1968)
+\bibitem{Super-K} Super-Kamiokande Collaboration. Phys. Rev. Lett. \textbf{81}, 1562 (1998)
+\bibitem{Sudbury Neutrino}
+SNO Collaboration. Phys. Rev. Lett. \textbf{87}, 071301 (2001)
+\bibitem{Sakharov}
+A. D. Sakharov. Pisma Zh. Eksp. Teor. Fiz., \textbf{5}:32-35, 1967
+
+\end{thebibliography}
+
+\end{document}
