@@ -45,3 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.pdf
+Figures/2nuBBSpectrum.png
+*.aux
+Prospectus.out
+*.toc
+Prospectus.log
+*.gz
