@@ -9,8 +9,10 @@
 \usepackage{tikz-feynman}
 \usepackage{comment}
 \usepackage{chngcntr}
+\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{setspace}
+\usepackage{lineno}
 
 \newcommand{\rulesep}{\unskip\ \vrule\ }
 \newcommand{\zeronubb}{$0\nu \beta \beta$}
@@ -41,8 +43,10 @@ Dr. ~Reina \textsc{Maruyama}
 \end{titlepage}
 
 \tableofcontents
+\listoffigures
 
 \doublespacing
+\linenumbers
 
 \section{Introduction}
 
@@ -84,7 +88,7 @@ M =\begin{pmatrix}
 m_D & M_R
 \end{pmatrix}
 \end{equation}
-In the case where $M_R \gg m_D$, the two neutrino masses become $M_R$ and $\frac{m_D^2}{M_R}$, which, if we assume that the Dirac mass is similar to the other leptons ($\approx 1 \textrm{MeV}$), yields a meV neutrino for a heavy neutrino of mass $10^{15} \textrm{eV}$.
+In the case where $M_R \gg m_D$, the two neutrino masses become $M_R$ and $\frac{m_D^2}{M_R}$, which, if we assume that the Dirac mass is similar to the other leptons ($\approx 1~\textrm{MeV}$), yields a meV-scale neutrino for a heavy neutrino of mass $10^{15} \textrm{eV}$.
 
 \subsection{Baryogenesis}
 
@@ -97,7 +101,7 @@ Another issue with the Standard Model is that it cannot correctly predict the ma
 The first condition is needed so that there is a physics process within which a baryon can be created or an anti-baryon destroyed ($\Delta \textrm{B}\neq0$), the second condition requires that this process occurs more often for baryon creation and anti-baryon destruction than vice-versa ($\Gamma(\Delta \textrm{B}>1) > \Gamma(\Delta \textrm{B}<-1)$), and the third condition requires that the process has to occur when the universe is not in thermal equilibrium as other processes would have to oppose baryon-asymmetry in thermal equilibrium.
 
 \subsection{Majorana Neutrinos and Leptogenesis}
-One possible mechanism for baryogenesis is that the imbalance between matter and antimatter is due to an imbalance in leptons that transfers over to the baryons. This leptogenesis would have to fulfill the same Sakharov conditions except that there would need to be lepton number, L, violation. This violation is possible if the neutrino is its own antiparticle. In the interaction $d + d \rightarrow u + u + e + e$ shown below,  \hyperref[fig:0nuBB]{Fig \ref{fig:0nuBB}}, a neutrino is exchanged between the two $W^-$ and allows for the final state to have two more leptons than the initial state, thereby violating lepton number conservation.
+One possible mechanism for baryogenesis is that the imbalance between matter and antimatter is due to an imbalance in leptons that transfers over to the baryons. This leptogenesis would have to fulfill the same Sakharov conditions except that there would need to be lepton number, L, violation. This violation is possible if the neutrino is its own antiparticle. In the interaction $d + d \rightarrow u + u + e + e$ shown below,  \hyperref[fig:0nuBB]{Fig \ref*{fig:0nuBB}}, a neutrino is exchanged between the two $W^-$ and allows for the final state to have two more leptons than the initial state, thereby violating lepton number conservation.
 
 
 \begin{figure}[t!]
@@ -175,14 +179,14 @@ If this process exists, then, in the early universe, there could have been an im
 
 \section{Double Beta Decay in the Laboratory}
 
-In the laboratory, the fundamental interactions shown in \hyperref[fig:2nuBB]{Fig. \ref{fig:0nuBB} and \ref{fig:2nuBB}} are measured as decays of specific nuclei. In particular, double beta decay occurs when two protons or two neutrons in a nucleus spontaneously decay, typically from the ground state of the initial nucleus to the ground state of the final nucleus (\color{blue}citation needed\color{black}). By energy conservation, the change in energy from the initial to the final nucleus, called the Q-value, is given in roughly equal amounts to the final state particles: the two electrons, and, in the case of \twonubb, the two neutrinos. The nuclear recoil is negligible in these decays as the nuclei involved are much more massive than the electrons and the neutrinos. 
+In the laboratory, the fundamental interactions shown in \hyperref[fig:0nuBB]{Fig. \ref*{fig:0nuBB}} and \hyperref[fig:2nuBB]{Fig. \ref*{fig:2nuBB}} are measured as decays of specific nuclei. In particular, double beta decay occurs when two protons or two neutrons in a nucleus spontaneously decay, typically from the ground state of the initial nucleus to the ground state of the final nucleus (\color{blue}citation needed\color{black}). By energy conservation, the change in energy from the initial to the final nucleus, called the Q-value, is given in roughly equal amounts to the final state particles: the two electrons, and, in the case of \twonubb, the two neutrinos. The nuclear recoil is negligible in these decays as the nuclei involved are much more massive than the electrons and the neutrinos. 
 
-When detecting double beta decay, the neutrinos pass undetected through the detector volume and only the electrons can be measured. Thus, the energies reconstructed by the electrons will be a continuous spectrum up to the Q-value for \twonubb~and a single peak at the Q-value for \zeronubb~\hyperref[fig:2nubbspectrum]{Fig. \ref{fig:2nubbspectrum}}.
+When detecting double beta decay, the neutrinos pass undetected through the detector volume and only the electrons can be measured. Thus, the energies reconstructed by the electrons will be a continuous spectrum up to the Q-value for \twonubb~and a single peak at the Q-value for \zeronubb~\hyperref[fig:2nubbspectrum]{Fig. \ref*{fig:2nubbspectrum}}.
 
 \begin{figure} [h]
 \centering
 \includegraphics[width=0.7\linewidth]{Figures/2nuBBSpectrum.png}
-\caption{An example spectrum for Double beta Decay. The amplitude of the \zeronubb~decay is not shown to scale.}
+\caption{An example spectrum for double beta decay. The amplitude of the \zeronubb~decay is not shown to scale.}
 \label{fig:2nubbspectrum}
 \end{figure}
 
@@ -215,7 +219,7 @@ $^{150}\textrm{Nd}$ & $0.00911^{+0.00025}_{-0.00022}\pm 0.00063$ & NEMO-3 \\ \hl
 \subsection{\zeronubb}
 In principle, all nuclei that can undergo \twonubb~can also undergo \zeronubb. The main difference experimentally is that instead of searching for a spectrum, the signature of \zeronubb~is that of a single peak at the Q-value. This peak feature allows for experiments to be designed that are optimized to minimize backgrounds around the Q-value, which increases their sensitivity to \zeronubb. 
 
-Sensitivity to \zeronubb~ 
+Sensitivity to \zeronubb~ (\color{cyan}Add more here \color{black})
 
 \subsection{\zeronubb~Experiments}
 \subsubsection{GERDA}
@@ -225,10 +229,94 @@ Sensitivity to \zeronubb~
 \subsubsection{Heidelburg-Moscow}
 \subsubsection{Kamland-Zen}
 
-\section{CUORE Experiment}
+\section{CUORE Experiment Apparatus}
 
-The CUORE (Cryogenic Underground Observatory for Rare Events)  Experiment is located in Gran Sasso, Italy, and is a bolometric 
+CUORE (Cryogenic Underground Observatory for Rare Events) is located in Gran Sasso, Italy, and utilizes a bolometric method to search for \zeronubb. The experiment will run with 988 crystals of TeO$_2$ held at roughly 10 mK. The source of \zeronubb~are the $^{130}$Te nuclei inside of the crystals ($34.2\%$ natural abundance \cite{Te130 Abundance}). Thus, in this setup, the crystals act as both sources and detectors of \zeronubb~When energy is deposited in the crystals, such as from the electrons emitted during \zeronubb, the temperature of the crystals rises. The Q-value of the decay of interest, $^{130}\textrm{Te} \rightarrow ^{130}\textrm{Xe} + e + e$, is $2527.518\pm 0.013$ keV \cite{QValue_1} \cite{QValue_2} \cite{QValue_3}. This high Q-value is well separated from other naturally occuring environmental $\gamma$'s except for $^{60}$Co at 2506 keV and $^{208}$Tl at 2615 keV. However, the resolution of the CUORE crystals will be $\sim5$ keV, which means that these peaks will not affect the region of interest, but have other uses that will be discussed more in sections (\color{green}Section Names\color{black}).
 
+\subsection{CUORE Detectors}
+
+The CUORE detectors are 988 $ 5\times 5 \times 5~ \textrm{cm}^3$ crystals arranged into 19 towers with 13 floors containing 4 crystals each as shown in \hyperref[fig:cuore-detector-array0]{Fig. \ref*{fig:cuore-detector-array0}}. The total detector mass is 741 kg with 206 kg of $^{130}$Te. 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{"Figures/CUORE detector array_0"}
+\caption{A rendering of the CUORE towers. The 19 towers are arranged into rows of 3, 4, 5, 4, and 3 towers.}
+\label{fig:cuore-detector-array0}
+\end{figure}
+
+
+The crystals in each tower are held by copper frames, with polytetrafluoroethylene (PTFE) in between the copper and the crystals. The crystals respond to energy deposition by a small temperature rise according to
+\begin{equation}
+\delta T = E/C(T).
+\end{equation}
+At low C, $\delta T$ is maximized; therefore, the crystals are operated at low temperatures where C(T) is given by the Debye Model:
+\begin{equation}
+C(T)\sim T^3.
+\end{equation}
+At 10 mK, the operating temperature of CUORE, the heat capacity is $\sim2$ nJ/K, which causes a 1 MeV energy deposit to have a $\delta T$ of $\sim0.1$ mK.
+
+This temperature rise is measured by a neutron-transmutation-doped (NTD) germanium thermistors which are glued onto each crystal. These thermistors allow the temperature change of the crystals to be read out by electronics as a change in applied voltage. Also glued on the crystals are silicon resistors which are used as a Joule heater. Bonded to the thermistors and the heaters are gold wires which are bonded to copper tape with a polyethylene naphthalate (PEN) substrate (collectively called Cu-PEN) on wire trays along the sides of the towers, shown in \hyperref[fig:bondedchips]{Fig. \ref*{fig:bondedchips}}.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/BondedChips}
+\caption{A germanium NTD on the crystal with four gold wires that have been bonded to both the NTD and to copper pads on the Cu-PEN tape.}
+\label{fig:bondedchips}
+\end{figure}
+These signals are then read out by room-temperature electronics on top of the cryostat. A rendering of a full tower with the copper frames, wire trays, PTFE, and crystals can be seen at \hyperref[fig:SingleTowerWithZoom]{Fig. \ref*{fig:SingleTowerWithZoom}}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/C0TowerZoom.pdf}
+\caption{A rendering of a single tower in the CUORE detector assembly with a cutout for a single floor. Adjacent floors share the same frames.}
+\label{fig:SingleTowerWithZoom}
+\end{figure}
+
+After an energy deposition causes the temperature of the crystal to rise, the crystal returns slowly back to the baseline temperature due to the weak thermal connection between the crystals and the copper frames which are held at 10 mK. A diagram of the thermal connection is shown in \hyperref[fig:thermal_crystal_cartoon]{Fig. \ref*{fig:thermal_crystal_cartoon}}. The rise and fall times of the signal are around 0.05 seconds and 0.2 seconds, respectively, for a 2615 keV signal.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/BolDetector_Cartoon.pdf}
+\caption{A diagram of the thermal connection of the TeO$_2$ crystals to the thermal bath provided by the copper frames. The weak thermal coupling is provided by the PTFE and the gold wires for the NTD and the heater. The thermistor is not shown to scale.}
+\label{fig:thermal_crystal_cartoon}
+\end{figure}
+
+
+
+\subsection{CUORE Cryostat}
+
+Since the heat capacity of the CUORE crystals is so strongly dependent on temperature, it is important to have a system that can cool down the crystals to low temperatures and keep them running in stable conditions over long periods. To this end, we constructed a custom cryostat to house the crystals. In addition to cooling the crystals, the cryostat also houses the shielding for the crystals and needs to be made of radiopure materials, especially near the detectors themselves.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/Cryostat_CAD_cutout}
+\caption{}
+\label{fig:cryostat_cad_cutout}
+\end{figure}
+
+
+\subsubsection{Cooling Systems}
+\begin{itemize}
+\item FCS
+\item Pulse Tubes
+\item Dilution Fridge
+\end{itemize}
+
+\subsubsection{Radiopurity}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/CUORE_background_budget}
+\caption{}
+\label{fig:istogramma}
+\end{figure}
+
+
+\subsection{CUORE Calibration}
+
+With the stringent background requirements for the CUORE detectors, (\color{red}Calculate event rate for bkg events?\color{black}) , there are not enough events to calibrate the detectors to understand their energy response. The Detector Calibration System (DCS) was designed in response to this need. This system deploys known calibration sources to the detectors and irradiates them so that the energy peaks from these sources can be identified. 
+
+
+\section{CUORE Simulations}
 \section{Location of Work}
 
 \section{Dissertation Organization Proposal}
@@ -261,6 +349,16 @@ R. Davis, D. Harmer, K. Hoffman. Phys. Rev. Lett. \textbf{20}, 1205 (1968)
 SNO Collaboration. Phys. Rev. Lett. \textbf{87}, 071301 (2001)
 \bibitem{Sakharov}
 A. D. Sakharov. Pisma Zh. Eksp. Teor. Fiz., \textbf{5}:32-35, 1967
+\bibitem{Te130 Abundance}
+M. A. Fehr, M. Rehk{\"a}mper, A. N. Halliday. Int. J. Mass Spectom. \textbf{232}, 83 (2004)
+\bibitem{QValue_1}
+M. Redshaw, B.J. Mount, E.G. Myers, and F.T. Avignone, III. Phys. Rev. Lett. \textbf{102} (2009) 212502
+\bibitem{QValue_2}
+N.D. Scielzo et al., Phys. Rev. C \textbf{80} (2009) 025501
+\bibitem{QValue_3}
+S. Rahaman et al. Phys. Lett. B \textbf{703} (2011) 412
+\bibitem{0nu_LongAnalysisPaper}
+CUORE Collaboration. Eur. Phys. J. C \textbf{74}, 2956 (2014)
 
 \end{thebibliography}
 

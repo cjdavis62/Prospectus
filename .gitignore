@@ -52,3 +52,6 @@ Prospectus.out
 *.toc
 Prospectus.log
 *.gz
+*.png
+*.eps
+Prospectus.lof
