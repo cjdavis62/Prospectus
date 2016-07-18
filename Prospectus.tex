@@ -39,6 +39,11 @@ supervised by \par
 Dr. ~Reina \textsc{Maruyama}
 
 \vfill
+Thesis Committee \par
+Dr. ~Karsten \textsc{Heeger} \par
+Dr. ~Keith \textsc{Baker}
+
+\vfill
 {\large \today \par}
 \end{titlepage}
 
@@ -231,7 +236,7 @@ Sensitivity to \zeronubb~ (\color{cyan}Add more here \color{black})
 
 \section{CUORE Experiment Apparatus}
 
-CUORE (Cryogenic Underground Observatory for Rare Events) is located in Gran Sasso, Italy, and utilizes a bolometric method to search for \zeronubb. The experiment will run with 988 crystals of TeO$_2$ held at roughly 10 mK. The source of \zeronubb~are the $^{130}$Te nuclei inside of the crystals ($34.2\%$ natural abundance \cite{Te130 Abundance}). Thus, in this setup, the crystals act as both sources and detectors of \zeronubb~When energy is deposited in the crystals, such as from the electrons emitted during \zeronubb, the temperature of the crystals rises. The Q-value of the decay of interest, $^{130}\textrm{Te} \rightarrow ^{130}\textrm{Xe} + e + e$, is $2527.518\pm 0.013$ keV \cite{QValue_1} \cite{QValue_2} \cite{QValue_3}. This high Q-value is well separated from other naturally occuring environmental $\gamma$'s except for $^{60}$Co at 2506 keV and $^{208}$Tl at 2615 keV. However, the resolution of the CUORE crystals will be $\sim5$ keV, which means that these peaks will not affect the region of interest, but have other uses that will be discussed more in sections (\color{green}Section Names\color{black}).
+CUORE (Cryogenic Underground Observatory for Rare Events) is located in Gran Sasso, Italy, and utilizes a bolometric method to search for \zeronubb. The experiment will run with 988 crystals of TeO$_2$ held at roughly 10 mK. The source of \zeronubb~are the $^{130}$Te nuclei inside of the crystals ($34.2\%$ natural abundance \cite{Te130 Abundance}). Thus, in this setup, the crystals act as both sources and detectors of \zeronubb~When energy is deposited in the crystals, such as from the electrons emitted during \zeronubb, the temperature of the crystals rises. The Q-value of the decay of interest, $^{130}\textrm{Te} \rightarrow ^{130}\textrm{Xe} + e + e$, is $2527.518\pm 0.013$ keV \cite{QValue_1} \cite{QValue_2} \cite{QValue_3}. This high Q-value is well-separated from other naturally occuring environmental $\gamma$'s except for $^{60}$Co at 2506 keV and $^{208}$Tl at 2615 keV. However, the resolution of the CUORE crystals will be $\sim5$ keV, which means that these peaks will not affect the region of interest, but have other uses that will be discussed more in sections (\color{green}Section Names\color{black}).
 
 \subsection{CUORE Detectors}
 
@@ -267,16 +272,18 @@ These signals are then read out by room-temperature electronics on top of the cr
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.7\linewidth]{Figures/C0TowerZoom.pdf}
-\caption{A rendering of a single tower in the CUORE detector assembly with a cutout for a single floor. Adjacent floors share the same frames.}
+\caption{A rendering of a single tower in the CUORE detector assembly with a cutout for a single floor. Adjacent floors share the same frames. Diagram from \cite{CUORE_DetectorPaper}}
 \label{fig:SingleTowerWithZoom}
 \end{figure}
 
 After an energy deposition causes the temperature of the crystal to rise, the crystal returns slowly back to the baseline temperature due to the weak thermal connection between the crystals and the copper frames which are held at 10 mK. A diagram of the thermal connection is shown in \hyperref[fig:thermal_crystal_cartoon]{Fig. \ref*{fig:thermal_crystal_cartoon}}. The rise and fall times of the signal are around 0.05 seconds and 0.2 seconds, respectively, for a 2615 keV signal.
 
+(\color{yellow}More detail can be found in \cite{CUORE_DetectorPaper}\color{black})
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.7\linewidth]{Figures/BolDetector_Cartoon.pdf}
-\caption{A diagram of the thermal connection of the TeO$_2$ crystals to the thermal bath provided by the copper frames. The weak thermal coupling is provided by the PTFE and the gold wires for the NTD and the heater. The thermistor is not shown to scale.}
+\caption{A diagram of the thermal connection of the TeO$_2$ crystals to the thermal bath provided by the copper frames. The weak thermal coupling is provided by the PTFE and the gold wires for the NTD and the heater. The thermistor is not shown to scale. Diagram from \cite{CUORE_DetectorPaper}}
 \label{fig:thermal_crystal_cartoon}
 \end{figure}
 
@@ -286,10 +293,10 @@ After an energy deposition causes the temperature of the crystal to rise, the cr
 
 Since the heat capacity of the CUORE crystals is so strongly dependent on temperature, it is important to have a system that can cool down the crystals to low temperatures and keep them running in stable conditions over long periods. To this end, we constructed a custom cryostat to house the crystals. In addition to cooling the crystals, the cryostat also houses the shielding for the crystals and needs to be made of radiopure materials, especially near the detectors themselves.
 
-\begin{figure}
+\begin{figure}[p]
 \centering
-\includegraphics[width=0.7\linewidth]{Figures/Cryostat_CAD_cutout}
-\caption{}
+\includegraphics[width=0.7\linewidth]{Figures/Cryostat_Adjusted.png}
+\caption{A CAD drawing of a cutaway the CUORE cryostat showing the internal shielding of the cryostat. The temperature stages of the cryostat are also shown. Not included are the external shields which extend around the sides of the cryostat}
 \label{fig:cryostat_cad_cutout}
 \end{figure}
 
@@ -303,13 +310,36 @@ Since the heat capacity of the CUORE crystals is so strongly dependent on temper
 
 \subsubsection{Radiopurity}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{Figures/CUORE_background_budget}
-\caption{}
+\caption{CUORE background budget. The CUORE goal is 0.01 counts/keV/kg/y with most of the background due to the surfaces of cryostat elements nearest to the crystal and the bulk of the Roman lead.}
 \label{fig:istogramma}
 \end{figure}
 
+The background goal of CUORE is to have no greater than 0.01 counts/keV/kg/yr in the region of interest, defined to be a 100 keV interval from 2470 keV to 2570 keV. In order to achieve this low background, the parts nearest to the detectors undergo intensive cleaning. The contamination of these surfaces is given in the table below.
+
+\begin{tabular}{|c|c|c|}
+\hline 
+ Component & $^{232}$Th [g/g] & $^{238}$ U [g/g] \\ 
+\hline 
+TeO$_2$ crystals & $< 2.1\times 10^{-13}$ & $<5.3\times 10^{-14}$ \\ 
+\hline 
+NOSV copper & $<5.0 \times 10^{-13}$ & $<5.3 \times 10^{-12}$ \\ 
+\hline 
+NTD sensors & $< 1.0 \times 10^{-9}$ & $<1.0 \times 10^{-9}$ \\ 
+\hline 
+Bonding gold wires & $< 1.0 \times 10^{-8}$ & $<1.0 \times 10^{-9}$ \\ 
+\hline 
+Si heaters &   $<8\times 10^{-11}$ & $<1.7 \times 10^{-10}$ \\ 
+\hline 
+PTFE holders & $<1.5\times 10^{-12}$ & $<1.8 \times 10^{-12}$ \\ 
+\hline 
+Cu-PEN cables & $<4.4\times 10^{-10}$ & $1.1 \times 10^{-10}$ \\ 
+\hline
+Glue & $<2.2\times 10^{-10}$ & $<8.2\times10^{-10}$ \\
+\hline 
+\end{tabular} 
 
 \subsection{CUORE Calibration}
 
@@ -317,6 +347,18 @@ With the stringent background requirements for the CUORE detectors, (\color{red}
 
 
 \section{CUORE Simulations}
+
+Using physics simulations can be a valuable tool for understanding a detector (\color{blue}citation needed\color{black}).  CUORE utilizes Geant4, a Monte Carlo simulation package which specializes in simulating the physics of particle propagation through matter \cite{Geant4_1} \cite{Geant4_2}. For the simulations in CUORE, we implement a code called \textit{qshields} which is written for Geant4.9.6.p03 and uses the Livermore physics list. The CUORE simulation is used to generate particles on the surfaces and inside the volumes of different detector, cryostat, and shielding components. In the \textit{qshields} simulation, particular attention is taken to recreating the geometry of components on or near the detector. Volume elements further away that lack direct line of sight to the crystals and have lead and copper shielding between them and the detectors are simplified in the \textit{qshields} geometry. This was done in order both to simplify the geometry and to remove degenerate volumes. The CUORE MC geometry in \textit{qshields} can be seen in \hyperref[fig:cuorecryostatmc]{Fig. \ref*{fig:cuorecryostatmc}}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/CUORE_cryostat_MC}
+\caption{Cutaway of the CUORE cryostat in \textit{qshields}. Not cutaway are the calibration source strings and the inner calibration tubes. The external shielding is not shown. Compare with \hyperref[fig:cryostat_cad_cutout]{Fig. \ref*{fig:cryostat_cad_cutout}} for the CAD drawing of the same cryostat.}
+\label{fig:cuorecryostatmc}
+\end{figure}
+
+
+
 \section{Location of Work}
 
 \section{Dissertation Organization Proposal}
@@ -336,6 +378,7 @@ With the stringent background requirements for the CUORE detectors, (\color{red}
 
 \section{Timetable}
 
+\newpage
 
 \begin{thebibliography}{8}
 \bibitem{Higgs-ATLAS}
@@ -359,6 +402,12 @@ N.D. Scielzo et al., Phys. Rev. C \textbf{80} (2009) 025501
 S. Rahaman et al. Phys. Lett. B \textbf{703} (2011) 412
 \bibitem{0nu_LongAnalysisPaper}
 CUORE Collaboration. Eur. Phys. J. C \textbf{74}, 2956 (2014)
+\bibitem{CUORE_DetectorPaper}
+C. Alduino et al 2016 \textit{JINST} \textbf{11} P07009
+\bibitem{Geant4_1}
+J. Allision, et al. \textit{IEEE Transactions on Nuclear Science} \textbf{53}, 270-278 (2006)
+\bibitem{Geant4_2}
+S. Agostinelli, et al. \textit{Nuclear Instruments and Methods A} \textbf{50}, 250-303 (2003)
 
 \end{thebibliography}
 
