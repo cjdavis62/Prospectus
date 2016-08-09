@@ -57,3 +57,7 @@ Prospectus.log
 Prospectus.lof
 *.svg
 *.pdf_tex
+*.jpeg
+*.jpg
+*.bbl
+*.blg
